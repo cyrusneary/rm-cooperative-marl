@@ -1,0 +1,578 @@
+0 # initial state 
+(0, 32, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(0, 16, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(0, 8, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(0, 4, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(0, 2, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(0, 1, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(1, 33, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(1, 17, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(1, 9, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(1, 5, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(1, 3, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(1, 0, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(2, 34, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(2, 18, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(2, 10, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(2, 6, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(2, 0, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(2, 3, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(3, 35, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(3, 19, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(3, 11, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(3, 7, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(3, 1, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(3, 2, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(4, 36, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(4, 20, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(4, 12, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(4, 0, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(4, 6, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(4, 5, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(5, 37, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(5, 21, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(5, 13, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(5, 1, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(5, 7, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(5, 4, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(6, 38, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(6, 22, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(6, 14, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(6, 2, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(6, 4, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(6, 7, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(7, 39, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(7, 23, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(7, 15, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(7, 3, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(7, 5, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(7, 6, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(8, 40, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(8, 24, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(8, 0, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(8, 12, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(8, 10, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(8, 9, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(9, 41, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(9, 25, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(9, 1, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(9, 13, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(9, 11, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(9, 8, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(10, 42, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(10, 26, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(10, 2, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(10, 14, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(10, 8, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(10, 11, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(11, 43, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(11, 27, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(11, 3, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(11, 15, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(11, 9, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(11, 10, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(12, 44, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(12, 28, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(12, 4, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(12, 8, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(12, 14, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(12, 13, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(13, 45, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(13, 29, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(13, 5, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(13, 9, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(13, 15, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(13, 12, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(14, 46, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(14, 30, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(14, 6, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(14, 10, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(14, 12, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(14, 15, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(15, 47, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(15, 31, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(15, 7, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(15, 11, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(15, 13, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(15, 14, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(16, 48, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(16, 0, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(16, 24, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(16, 20, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(16, 18, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(16, 17, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(17, 49, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(17, 1, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(17, 25, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(17, 21, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(17, 19, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(17, 16, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(18, 50, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(18, 2, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(18, 26, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(18, 22, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(18, 16, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(18, 19, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(19, 51, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(19, 3, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(19, 27, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(19, 23, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(19, 17, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(19, 18, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(20, 52, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(20, 4, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(20, 28, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(20, 16, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(20, 22, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(20, 21, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(21, 53, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(21, 5, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(21, 29, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(21, 17, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(21, 23, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(21, 20, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(22, 54, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(22, 6, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(22, 30, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(22, 18, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(22, 20, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(22, 23, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(23, 55, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(23, 7, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(23, 31, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(23, 19, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(23, 21, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(23, 22, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(24, 56, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(24, 8, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(24, 16, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(24, 28, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(24, 26, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(24, 25, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(25, 57, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(25, 9, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(25, 17, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(25, 29, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(25, 27, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(25, 24, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(26, 58, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(26, 10, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(26, 18, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(26, 30, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(26, 24, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(26, 27, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(27, 59, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(27, 11, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(27, 19, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(27, 31, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(27, 25, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(27, 26, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(28, 60, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(28, 12, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(28, 20, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(28, 24, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(28, 30, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(28, 29, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(29, 61, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(29, 13, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(29, 21, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(29, 25, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(29, 31, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(29, 28, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(30, 62, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(30, 14, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(30, 22, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(30, 26, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(30, 28, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(30, 31, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(31, 63, 'r1', 0) # Agent 1 moves onto rendezvous location 
+(31, 15, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(31, 23, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(31, 27, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(31, 29, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(31, 30, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(32, 0, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(32, 48, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(32, 40, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(32, 36, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(32, 34, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(32, 33, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(33, 1, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(33, 49, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(33, 41, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(33, 37, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(33, 35, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(33, 32, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(34, 2, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(34, 50, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(34, 42, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(34, 38, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(34, 32, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(34, 35, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(35, 3, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(35, 51, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(35, 43, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(35, 39, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(35, 33, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(35, 34, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(36, 4, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(36, 52, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(36, 44, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(36, 32, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(36, 38, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(36, 37, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(37, 5, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(37, 53, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(37, 45, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(37, 33, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(37, 39, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(37, 36, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(38, 6, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(38, 54, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(38, 46, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(38, 34, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(38, 36, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(38, 39, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(39, 7, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(39, 55, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(39, 47, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(39, 35, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(39, 37, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(39, 38, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(40, 8, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(40, 56, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(40, 32, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(40, 44, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(40, 42, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(40, 41, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(41, 9, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(41, 57, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(41, 33, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(41, 45, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(41, 43, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(41, 40, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(42, 10, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(42, 58, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(42, 34, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(42, 46, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(42, 40, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(42, 43, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(43, 11, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(43, 59, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(43, 35, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(43, 47, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(43, 41, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(43, 42, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(44, 12, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(44, 60, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(44, 36, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(44, 40, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(44, 46, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(44, 45, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(45, 13, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(45, 61, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(45, 37, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(45, 41, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(45, 47, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(45, 44, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(46, 14, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(46, 62, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(46, 38, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(46, 42, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(46, 44, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(46, 47, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(47, 15, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(47, 63, 'r2', 0) # Agent 2 moves onto rendezvous location 
+(47, 39, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(47, 43, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(47, 45, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(47, 46, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(48, 16, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(48, 32, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(48, 56, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(48, 52, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(48, 50, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(48, 49, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(49, 17, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(49, 33, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(49, 57, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(49, 53, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(49, 51, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(49, 48, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(50, 18, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(50, 34, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(50, 58, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(50, 54, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(50, 48, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(50, 51, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(51, 19, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(51, 35, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(51, 59, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(51, 55, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(51, 49, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(51, 50, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(52, 20, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(52, 36, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(52, 60, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(52, 48, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(52, 54, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(52, 53, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(53, 21, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(53, 37, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(53, 61, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(53, 49, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(53, 55, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(53, 52, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(54, 22, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(54, 38, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(54, 62, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(54, 50, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(54, 52, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(54, 55, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(55, 23, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(55, 39, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(55, 63, 'r3', 0) # Agent 3 moves onto rendezvous location 
+(55, 51, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(55, 53, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(55, 54, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(56, 24, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(56, 40, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(56, 48, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(56, 60, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(56, 58, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(56, 57, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(57, 25, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(57, 41, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(57, 49, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(57, 61, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(57, 59, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(57, 56, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(58, 26, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(58, 42, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(58, 50, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(58, 62, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(58, 56, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(58, 59, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(59, 27, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(59, 43, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(59, 51, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(59, 63, 'r4', 0) # Agent 4 moves onto rendezvous location 
+(59, 57, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(59, 58, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(60, 28, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(60, 44, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(60, 52, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(60, 56, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(60, 62, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(60, 61, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(61, 29, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(61, 45, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(61, 53, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(61, 57, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(61, 63, 'r5', 0) # Agent 5 moves onto rendezvous location 
+(61, 60, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(62, 30, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(62, 46, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(62, 54, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(62, 58, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(62, 60, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(62, 63, 'r6', 0) # Agent 6 moves onto rendezvous location 
+(63, 31, 'l1', 0) # Agent 1 moves off rendezvous location too early 
+(63, 47, 'l2', 0) # Agent 2 moves off rendezvous location too early 
+(63, 55, 'l3', 0) # Agent 3 moves off rendezvous location too early 
+(63, 59, 'l4', 0) # Agent 4 moves off rendezvous location too early 
+(63, 61, 'l5', 0) # Agent 5 moves off rendezvous location too early 
+(63, 62, 'l6', 0) # Agent 6 moves off rendezvous location too early 
+(63, 64, 'r', 0) # Agents have successfully completed rendezvous 
+(64, 96, 'g1', 0) # Agent 1 moves to goal location 
+(64, 80, 'g2', 0) # Agent 2 moves to goal location 
+(64, 72, 'g3', 0) # Agent 3 moves to goal location 
+(64, 68, 'g4', 0) # Agent 4 moves to goal location 
+(64, 66, 'g5', 0) # Agent 5 moves to goal location 
+(64, 65, 'g6', 0) # Agent 6 moves to goal location 
+(65, 97, 'g1', 0) # Agent 1 moves to goal location 
+(65, 81, 'g2', 0) # Agent 2 moves to goal location 
+(65, 73, 'g3', 0) # Agent 3 moves to goal location 
+(65, 69, 'g4', 0) # Agent 4 moves to goal location 
+(65, 67, 'g5', 0) # Agent 5 moves to goal location 
+(66, 98, 'g1', 0) # Agent 1 moves to goal location 
+(66, 82, 'g2', 0) # Agent 2 moves to goal location 
+(66, 74, 'g3', 0) # Agent 3 moves to goal location 
+(66, 70, 'g4', 0) # Agent 4 moves to goal location 
+(66, 67, 'g6', 0) # Agent 6 moves to goal location 
+(67, 99, 'g1', 0) # Agent 1 moves to goal location 
+(67, 83, 'g2', 0) # Agent 2 moves to goal location 
+(67, 75, 'g3', 0) # Agent 3 moves to goal location 
+(67, 71, 'g4', 0) # Agent 4 moves to goal location 
+(68, 100, 'g1', 0) # Agent 1 moves to goal location 
+(68, 84, 'g2', 0) # Agent 2 moves to goal location 
+(68, 76, 'g3', 0) # Agent 3 moves to goal location 
+(68, 70, 'g5', 0) # Agent 5 moves to goal location 
+(68, 69, 'g6', 0) # Agent 6 moves to goal location 
+(69, 101, 'g1', 0) # Agent 1 moves to goal location 
+(69, 85, 'g2', 0) # Agent 2 moves to goal location 
+(69, 77, 'g3', 0) # Agent 3 moves to goal location 
+(69, 71, 'g5', 0) # Agent 5 moves to goal location 
+(70, 102, 'g1', 0) # Agent 1 moves to goal location 
+(70, 86, 'g2', 0) # Agent 2 moves to goal location 
+(70, 78, 'g3', 0) # Agent 3 moves to goal location 
+(70, 71, 'g6', 0) # Agent 6 moves to goal location 
+(71, 103, 'g1', 0) # Agent 1 moves to goal location 
+(71, 87, 'g2', 0) # Agent 2 moves to goal location 
+(71, 79, 'g3', 0) # Agent 3 moves to goal location 
+(72, 104, 'g1', 0) # Agent 1 moves to goal location 
+(72, 88, 'g2', 0) # Agent 2 moves to goal location 
+(72, 76, 'g4', 0) # Agent 4 moves to goal location 
+(72, 74, 'g5', 0) # Agent 5 moves to goal location 
+(72, 73, 'g6', 0) # Agent 6 moves to goal location 
+(73, 105, 'g1', 0) # Agent 1 moves to goal location 
+(73, 89, 'g2', 0) # Agent 2 moves to goal location 
+(73, 77, 'g4', 0) # Agent 4 moves to goal location 
+(73, 75, 'g5', 0) # Agent 5 moves to goal location 
+(74, 106, 'g1', 0) # Agent 1 moves to goal location 
+(74, 90, 'g2', 0) # Agent 2 moves to goal location 
+(74, 78, 'g4', 0) # Agent 4 moves to goal location 
+(74, 75, 'g6', 0) # Agent 6 moves to goal location 
+(75, 107, 'g1', 0) # Agent 1 moves to goal location 
+(75, 91, 'g2', 0) # Agent 2 moves to goal location 
+(75, 79, 'g4', 0) # Agent 4 moves to goal location 
+(76, 108, 'g1', 0) # Agent 1 moves to goal location 
+(76, 92, 'g2', 0) # Agent 2 moves to goal location 
+(76, 78, 'g5', 0) # Agent 5 moves to goal location 
+(76, 77, 'g6', 0) # Agent 6 moves to goal location 
+(77, 109, 'g1', 0) # Agent 1 moves to goal location 
+(77, 93, 'g2', 0) # Agent 2 moves to goal location 
+(77, 79, 'g5', 0) # Agent 5 moves to goal location 
+(78, 110, 'g1', 0) # Agent 1 moves to goal location 
+(78, 94, 'g2', 0) # Agent 2 moves to goal location 
+(78, 79, 'g6', 0) # Agent 6 moves to goal location 
+(79, 111, 'g1', 0) # Agent 1 moves to goal location 
+(79, 95, 'g2', 0) # Agent 2 moves to goal location 
+(80, 112, 'g1', 0) # Agent 1 moves to goal location 
+(80, 88, 'g3', 0) # Agent 3 moves to goal location 
+(80, 84, 'g4', 0) # Agent 4 moves to goal location 
+(80, 82, 'g5', 0) # Agent 5 moves to goal location 
+(80, 81, 'g6', 0) # Agent 6 moves to goal location 
+(81, 113, 'g1', 0) # Agent 1 moves to goal location 
+(81, 89, 'g3', 0) # Agent 3 moves to goal location 
+(81, 85, 'g4', 0) # Agent 4 moves to goal location 
+(81, 83, 'g5', 0) # Agent 5 moves to goal location 
+(82, 114, 'g1', 0) # Agent 1 moves to goal location 
+(82, 90, 'g3', 0) # Agent 3 moves to goal location 
+(82, 86, 'g4', 0) # Agent 4 moves to goal location 
+(82, 83, 'g6', 0) # Agent 6 moves to goal location 
+(83, 115, 'g1', 0) # Agent 1 moves to goal location 
+(83, 91, 'g3', 0) # Agent 3 moves to goal location 
+(83, 87, 'g4', 0) # Agent 4 moves to goal location 
+(84, 116, 'g1', 0) # Agent 1 moves to goal location 
+(84, 92, 'g3', 0) # Agent 3 moves to goal location 
+(84, 86, 'g5', 0) # Agent 5 moves to goal location 
+(84, 85, 'g6', 0) # Agent 6 moves to goal location 
+(85, 117, 'g1', 0) # Agent 1 moves to goal location 
+(85, 93, 'g3', 0) # Agent 3 moves to goal location 
+(85, 87, 'g5', 0) # Agent 5 moves to goal location 
+(86, 118, 'g1', 0) # Agent 1 moves to goal location 
+(86, 94, 'g3', 0) # Agent 3 moves to goal location 
+(86, 87, 'g6', 0) # Agent 6 moves to goal location 
+(87, 119, 'g1', 0) # Agent 1 moves to goal location 
+(87, 95, 'g3', 0) # Agent 3 moves to goal location 
+(88, 120, 'g1', 0) # Agent 1 moves to goal location 
+(88, 92, 'g4', 0) # Agent 4 moves to goal location 
+(88, 90, 'g5', 0) # Agent 5 moves to goal location 
+(88, 89, 'g6', 0) # Agent 6 moves to goal location 
+(89, 121, 'g1', 0) # Agent 1 moves to goal location 
+(89, 93, 'g4', 0) # Agent 4 moves to goal location 
+(89, 91, 'g5', 0) # Agent 5 moves to goal location 
+(90, 122, 'g1', 0) # Agent 1 moves to goal location 
+(90, 94, 'g4', 0) # Agent 4 moves to goal location 
+(90, 91, 'g6', 0) # Agent 6 moves to goal location 
+(91, 123, 'g1', 0) # Agent 1 moves to goal location 
+(91, 95, 'g4', 0) # Agent 4 moves to goal location 
+(92, 124, 'g1', 0) # Agent 1 moves to goal location 
+(92, 94, 'g5', 0) # Agent 5 moves to goal location 
+(92, 93, 'g6', 0) # Agent 6 moves to goal location 
+(93, 125, 'g1', 0) # Agent 1 moves to goal location 
+(93, 95, 'g5', 0) # Agent 5 moves to goal location 
+(94, 126, 'g1', 0) # Agent 1 moves to goal location 
+(94, 95, 'g6', 0) # Agent 6 moves to goal location 
+(95, 127, 'g1', 1) # Agent 1 moves to goal location 
+(96, 112, 'g2', 0) # Agent 2 moves to goal location 
+(96, 104, 'g3', 0) # Agent 3 moves to goal location 
+(96, 100, 'g4', 0) # Agent 4 moves to goal location 
+(96, 98, 'g5', 0) # Agent 5 moves to goal location 
+(96, 97, 'g6', 0) # Agent 6 moves to goal location 
+(97, 113, 'g2', 0) # Agent 2 moves to goal location 
+(97, 105, 'g3', 0) # Agent 3 moves to goal location 
+(97, 101, 'g4', 0) # Agent 4 moves to goal location 
+(97, 99, 'g5', 0) # Agent 5 moves to goal location 
+(98, 114, 'g2', 0) # Agent 2 moves to goal location 
+(98, 106, 'g3', 0) # Agent 3 moves to goal location 
+(98, 102, 'g4', 0) # Agent 4 moves to goal location 
+(98, 99, 'g6', 0) # Agent 6 moves to goal location 
+(99, 115, 'g2', 0) # Agent 2 moves to goal location 
+(99, 107, 'g3', 0) # Agent 3 moves to goal location 
+(99, 103, 'g4', 0) # Agent 4 moves to goal location 
+(100, 116, 'g2', 0) # Agent 2 moves to goal location 
+(100, 108, 'g3', 0) # Agent 3 moves to goal location 
+(100, 102, 'g5', 0) # Agent 5 moves to goal location 
+(100, 101, 'g6', 0) # Agent 6 moves to goal location 
+(101, 117, 'g2', 0) # Agent 2 moves to goal location 
+(101, 109, 'g3', 0) # Agent 3 moves to goal location 
+(101, 103, 'g5', 0) # Agent 5 moves to goal location 
+(102, 118, 'g2', 0) # Agent 2 moves to goal location 
+(102, 110, 'g3', 0) # Agent 3 moves to goal location 
+(102, 103, 'g6', 0) # Agent 6 moves to goal location 
+(103, 119, 'g2', 0) # Agent 2 moves to goal location 
+(103, 111, 'g3', 0) # Agent 3 moves to goal location 
+(104, 120, 'g2', 0) # Agent 2 moves to goal location 
+(104, 108, 'g4', 0) # Agent 4 moves to goal location 
+(104, 106, 'g5', 0) # Agent 5 moves to goal location 
+(104, 105, 'g6', 0) # Agent 6 moves to goal location 
+(105, 121, 'g2', 0) # Agent 2 moves to goal location 
+(105, 109, 'g4', 0) # Agent 4 moves to goal location 
+(105, 107, 'g5', 0) # Agent 5 moves to goal location 
+(106, 122, 'g2', 0) # Agent 2 moves to goal location 
+(106, 110, 'g4', 0) # Agent 4 moves to goal location 
+(106, 107, 'g6', 0) # Agent 6 moves to goal location 
+(107, 123, 'g2', 0) # Agent 2 moves to goal location 
+(107, 111, 'g4', 0) # Agent 4 moves to goal location 
+(108, 124, 'g2', 0) # Agent 2 moves to goal location 
+(108, 110, 'g5', 0) # Agent 5 moves to goal location 
+(108, 109, 'g6', 0) # Agent 6 moves to goal location 
+(109, 125, 'g2', 0) # Agent 2 moves to goal location 
+(109, 111, 'g5', 0) # Agent 5 moves to goal location 
+(110, 126, 'g2', 0) # Agent 2 moves to goal location 
+(110, 111, 'g6', 0) # Agent 6 moves to goal location 
+(111, 127, 'g2', 1) # Agent 2 moves to goal location 
+(112, 120, 'g3', 0) # Agent 3 moves to goal location 
+(112, 116, 'g4', 0) # Agent 4 moves to goal location 
+(112, 114, 'g5', 0) # Agent 5 moves to goal location 
+(112, 113, 'g6', 0) # Agent 6 moves to goal location 
+(113, 121, 'g3', 0) # Agent 3 moves to goal location 
+(113, 117, 'g4', 0) # Agent 4 moves to goal location 
+(113, 115, 'g5', 0) # Agent 5 moves to goal location 
+(114, 122, 'g3', 0) # Agent 3 moves to goal location 
+(114, 118, 'g4', 0) # Agent 4 moves to goal location 
+(114, 115, 'g6', 0) # Agent 6 moves to goal location 
+(115, 123, 'g3', 0) # Agent 3 moves to goal location 
+(115, 119, 'g4', 0) # Agent 4 moves to goal location 
+(116, 124, 'g3', 0) # Agent 3 moves to goal location 
+(116, 118, 'g5', 0) # Agent 5 moves to goal location 
+(116, 117, 'g6', 0) # Agent 6 moves to goal location 
+(117, 125, 'g3', 0) # Agent 3 moves to goal location 
+(117, 119, 'g5', 0) # Agent 5 moves to goal location 
+(118, 126, 'g3', 0) # Agent 3 moves to goal location 
+(118, 119, 'g6', 0) # Agent 6 moves to goal location 
+(119, 127, 'g3', 1) # Agent 3 moves to goal location 
+(120, 124, 'g4', 0) # Agent 4 moves to goal location 
+(120, 122, 'g5', 0) # Agent 5 moves to goal location 
+(120, 121, 'g6', 0) # Agent 6 moves to goal location 
+(121, 125, 'g4', 0) # Agent 4 moves to goal location 
+(121, 123, 'g5', 0) # Agent 5 moves to goal location 
+(122, 126, 'g4', 0) # Agent 4 moves to goal location 
+(122, 123, 'g6', 0) # Agent 6 moves to goal location 
+(123, 127, 'g4', 1) # Agent 4 moves to goal location 
+(124, 126, 'g5', 0) # Agent 5 moves to goal location 
+(124, 125, 'g6', 0) # Agent 6 moves to goal location 
+(125, 127, 'g5', 1) # Agent 5 moves to goal location 
+(126, 127, 'g6', 1) # Agent 6 moves to goal location 

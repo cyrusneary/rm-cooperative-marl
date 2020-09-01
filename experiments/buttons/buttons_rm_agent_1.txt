@@ -1,0 +1,8 @@
+0 # initial state 
+(0, 1, 'by', 0) # Yellow button is pressed
+(0, 4, 'a1r', 0) # Agent 1 touches red
+(1, 4, 'a1r', 0) # Agent 1 touches red
+(1, 2, 'br', 0) # Red button is pressed
+(2, 3, 'g', 1) # Goal state is reached
+(3, 3, 'True', 0) # state 3 is an absorbing state
+(4, 4, 'True', 0) # State 4 is an absorbing state
