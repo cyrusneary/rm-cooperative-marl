@@ -5,14 +5,14 @@ import os
 
 if __name__ == "__main__":
 
-    num_times = 10 # Number of separate trials to run the algorithm for
+    num_times = 1 # Number of separate trials to run the algorithm for
 
-    num_agents = 2 # This will be automatically set to 3 for buttons experiment
+    num_agents = 10 # This will be automatically set to 3 for buttons experiment
 
-    experiment = 'rendezvous'
+    # experiment = 'rendezvous'
     # experiment = 'centralized_rendezvous'
     # experiment = 'ihrl_rendezvous'
-    # experiment = 'iql_rendezvous'
+    experiment = 'iql_rendezvous'
 
     # experiment = 'buttons'
     # experiment = 'ihrl_buttons'

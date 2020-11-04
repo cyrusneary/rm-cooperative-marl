@@ -45,10 +45,25 @@ def run_qlearning_task(epsilon,
 
         # Perform a q-learning step.
         if not(centralized_agent.is_task_complete):
+            current_u = centralized_agent.u
             s, a = centralized_agent.get_next_action(epsilon, learning_params)
             r, l, s_new = env.environment_step(s, a)
-            a = np.copy(env.last_action) # due to MDP slip
+            # a = np.copy(env.last_action) # due to MDP slip
             centralized_agent.update_agent(s_new, a, r, l, learning_params)
+
+            for u in centralized_agent.rm.U:
+                if not (u == current_u) and not (u in centralized_agent.rm.T):
+                    l = env.get_mdp_label(s, s_new, u)
+                    r = 0
+                    u_temp = u
+                    u2 = u
+                    for e in l:
+                        # Get the new reward machine state and the reward of this step
+                        u2 = centralized_agent.rm.get_next_state(u_temp, e)
+                        r = r + centralized_agent.rm.get_reward(u_temp, u2)
+                        # Update the reward machine state
+                        u_temp = u2
+                    centralized_agent.update_q_function(s, s_new, u, u2, a, r, learning_params)
 
         # If enough steps have elapsed, test and save the performance of the agents.
         if testing_params.test and tester.get_current_step() % testing_params.test_freq == 0:
@@ -151,7 +166,7 @@ def run_centralized_qlearning_test(centralized_agent,
         # trajectory.append({'s' : np.array(s_team, dtype=int), 'a' : np.array(a_team, dtype=int), 'u': int(testing_env.u)})
 
         testing_reward = testing_reward + r
-        a = np.copy(testing_env.last_action)
+        # a = np.copy(testing_env.last_action)
         centralized_agent.update_agent(s_team_next, a, r, l, learning_params, update_q_function=False)
         if centralized_agent.is_task_complete:
             break
@@ -204,7 +219,7 @@ def run_centralized_experiment(tester,
         while not tester.stop_learning():
             num_episodes += 1
 
-            epsilon = epsilon*0.99
+            # epsilon = epsilon*0.99
 
             run_qlearning_task(epsilon,
                                 tester,

@@ -156,6 +156,14 @@ class MultiAgentButtonsEnv:
             # Update the reward machine state
             self.u = u2
 
+        # if (not self.u == 6): # u = 6 corresponds to the "failed task" state 
+        #     if self.u >= 1:
+        #         self.yellow_button_pushed = True
+        #     if self.u >= 2:
+        #         self.green_button_pushed = True
+        #     if self.u >= 7:
+        #         self.red_button_pushed = True
+
         return r, l, s_next
 
     def get_next_state(self, s, a):
@@ -353,20 +361,23 @@ class MultiAgentButtonsEnv:
         row2, col2 = self.get_state_description(s_next[agent2])
         row3, col3 = self.get_state_description(s_next[agent3])
 
-        # check if agents are on tiles
-        if (row1, col1) in self.red_tiles:
-            l.append('a1r')
-        if (row2, col2) in self.yellow_tiles:
-            l.append('a2y')
-        if (row3, col3) in self.green_tiles:
-            l.append('a3g')
+        # check if agents are on dangerous tiles
+        if u == 0:
+            if (row2, col2) in self.yellow_tiles:
+                l.append('a2y')
+        if u == 0 or u == 1:
+            if (row3, col3) in self.green_tiles:
+                l.append('a3g')
+        if u == 0 or u == 1 or u == 2 or u == 3 or u == 4 or u == 5:
+            if (row1, col1) in self.red_tiles:
+                l.append('a1r')
 
         if u == 0:
         # Now check if agents are on buttons
-            if (row1,col1) == self.env_settings['yellow_button']:
+            if not ((row2, col2) in self.yellow_tiles) and (row1,col1) == self.env_settings['yellow_button']:
                 l.append('by')
         if u == 1:
-            if (row2, col2) == self.env_settings['green_button']:
+            if not ((row3, col3) in self.green_tiles) and (row2, col2) == self.env_settings['green_button']:
                 l.append('bg')
         if u == 2:
             if (row2, col2) == self.env_settings['red_button']:
@@ -390,10 +401,10 @@ class MultiAgentButtonsEnv:
                 l.append('a2lr')
             if not ((row3, col3) == self.env_settings['red_button']):
                 l.append('a3lr')
-
-        # Check if agent 1 has reached the goal
-        if (row1, col1) == self.env_settings['goal_location']:
-            l.append('g')
+        if u == 7:
+            # Check if agent 1 has reached the goal
+            if (row1, col1) == self.env_settings['goal_location']:
+                l.append('g')
 
         return l
 
@@ -501,6 +512,14 @@ class MultiAgentButtonsEnv:
         """        
         # Convert the Truth values of which buttons have been pushed to an int
         meta_state = int('{}{}{}'.format(int(self.red_button_pushed), int(self.green_button_pushed), int(self.yellow_button_pushed)), 2)
+
+
+        # # if the task has been failed, return 8
+        # if self.u == 6:
+        #     meta_state = 8
+
+        # meta_state = self.u
+
         return meta_state
 
     def get_num_meta_states(self, agent_id):

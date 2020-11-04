@@ -59,9 +59,9 @@ def run_iql_training(epsilon,
         r, _, s_team_next = training_env.environment_step(s_team, a_team)
 
         for i in range(num_agents):
-            a = training_env.get_last_action(i)
+            # a = training_env.get_last_action(i)
             current_meta_state = training_env.get_meta_state(i)
-            agent_list[i].update_agent(s_team_next[i], current_meta_state, a, r, learning_params, update_q_function=True)
+            agent_list[i].update_agent(s_team_next[i], current_meta_state, a_team[i], r, learning_params, update_q_function=True)
 
         # If enough steps have elapsed, test and save the performance of the agents.
         if testing_params.test and tester.get_current_step() % testing_params.test_freq == 0:
@@ -185,9 +185,9 @@ def run_iql_test(agent_list,
         testing_reward = testing_reward + r
 
         for i in range(num_agents):
-            a = testing_env.get_last_action(i)
+            # a = testing_env.get_last_action(i)
             current_meta_state = testing_env.get_meta_state(i)
-            agent_list[i].update_agent(s_team_next[i], current_meta_state, a, r, learning_params, update_q_function=False)
+            agent_list[i].update_agent(s_team_next[i], current_meta_state, a_team[i], r, learning_params, update_q_function=False)
 
         # If the task is complete, update all meta controllers and stop trying to complete it.
         env_rm_state = testing_env.u

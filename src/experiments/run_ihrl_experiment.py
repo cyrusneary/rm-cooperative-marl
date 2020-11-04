@@ -93,8 +93,8 @@ def run_ihrl_training(epsilon,
         completed_options = training_env.get_completed_options(s_team_next)
 
         for i in range(num_agents):
-            a = training_env.get_last_action(i)
-            agent_list[i].update_agent(s_team_next[i], a, r, completed_options, learning_params, update_q_function=True)
+            # a = training_env.get_last_action(i)
+            agent_list[i].update_agent(s_team_next[i], a_team[i], r, completed_options, learning_params, update_q_function=True)
             if agent_list[i].current_option in completed_options:
                 agent_list[i].option_complete = True
 
@@ -221,6 +221,22 @@ def run_ihrl_test(agent_list,
     trajectory = []
     step = 0
 
+    # agent_list[0].meta_q[:,0] = 1
+    # agent_list[0].meta_q[0,0] = 0
+    # agent_list[0].meta_q[0,1] = 1
+    # agent_list[0].meta_q[7,0] = 0
+    # agent_list[0].meta_q[7,2] = 1
+
+    # agent_list[1].meta_q[:,0] = 1
+    # agent_list[1].meta_q[1,0] = 0
+    # agent_list[1].meta_q[1,1] = 1
+    # agent_list[1].meta_q[3,0] = 0
+    # agent_list[1].meta_q[3,2] = 1
+
+    # agent_list[2].meta_q[:,0] = 1
+    # agent_list[2].meta_q[3,0] = 0
+    # agent_list[2].meta_q[3,1] = 1
+
     # Starting interaction with the environment
     for t in range(testing_params.num_steps):
         step = step + 1
@@ -261,8 +277,8 @@ def run_ihrl_test(agent_list,
         completed_options = testing_env.get_completed_options(s_team_next)
 
         for i in range(num_agents):
-            a = testing_env.get_last_action(i)
-            agent_list[i].update_agent(s_team_next[i], a, r, completed_options, learning_params, update_q_function=False)
+            # a = testing_env.get_last_action(i)
+            agent_list[i].update_agent(s_team_next[i], a_team[i], r, completed_options, learning_params, update_q_function=False)
             if agent_list[i].current_option in completed_options:
                 agent_list[i].option_complete = True
 

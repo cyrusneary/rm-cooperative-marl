@@ -94,7 +94,7 @@ class Agent:
                 temp = np.array(np.isnan(pr), dtype=float)
                 pr = temp / np.sum(temp)
 
-            pr_select = np.zeros([len(self.actions) + 1, 1])
+            pr_select = np.zeros(len(self.actions) + 1)
             pr_select[0] = 0
             for i in range(len(self.actions)):
                 pr_select[i+1] = pr_select[i] + pr[i]
@@ -105,7 +105,9 @@ class Agent:
                     a_selected = a
                     break
 
-
+            # best_actions = np.where(self.q[self.s, self.u, :] == np.max(self.q[self.s, self.u, :]))[0]
+            # a_selected = random.choice(best_actions)
+        
         a = a_selected
 
         return self.s, a

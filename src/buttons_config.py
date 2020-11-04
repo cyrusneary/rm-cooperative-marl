@@ -34,12 +34,12 @@ def buttons_config(num_times, num_agents):
     learning_params.gamma = 0.9 # 0.9
     learning_params.alpha = 0.8
     learning_params.T = 50
-    learning_params.initial_epsilon = 0.3
+    learning_params.initial_epsilon = 0.0
     learning_params.max_timesteps_per_task = testing_params.num_steps
 
     tester = Tester(learning_params, testing_params)
     tester.step_unit = step_unit
-    tester.total_steps = 100 * step_unit
+    tester.total_steps = 100 * step_unit # 100 * step_unit
     tester.min_steps = 1
 
     tester.num_times = num_times
@@ -64,7 +64,7 @@ def buttons_config(num_times, num_agents):
     env_settings['green_tiles'] = [(2,8), (2,9), (3,8), (3,9)]
     env_settings['red_tiles'] = [(8,5), (8,6), (8,7), (8,8), (9,5), (9,6), (9,7), (9,8)]
 
-    env_settings['p'] = 0.95
+    env_settings['p'] = 0.98
 
     tester.env_settings = env_settings
 

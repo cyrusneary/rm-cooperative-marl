@@ -151,11 +151,11 @@ class ButtonsEnv:
                     l.append('a2y')
                 elif np.random.random() <= thresh:
                     l.append('by')
-            elif u == 1 and (row,col) == self.env_settings['green_button']:
+            if u == 1 and (row,col) == self.env_settings['green_button']:
                 l.append('bg')
-            elif u == 2 and (row,col) == self.env_settings['red_button']:
+            if u == 2 and (row,col) == self.env_settings['red_button']:
                 l.append('a2br')
-            elif u == 3: 
+            if u == 3: 
                 if not((row,col) == self.env_settings['red_button']):
                     l.append('a2lr')
                 elif np.random.random() <= thresh:
@@ -166,9 +166,9 @@ class ButtonsEnv:
                     l.append('a3g')
                 elif np.random.random() <= thresh:
                     l.append('bg')
-            elif u == 1 and (row,col) == self.env_settings['red_button']:
+            if u == 1 and (row,col) == self.env_settings['red_button']:
                 l.append('a3br')
-            elif u == 2: 
+            if u == 2: 
                 if not((row,col) == self.env_settings['red_button']):
                     l.append('a3lr')
                 elif np.random.random() <= thresh:

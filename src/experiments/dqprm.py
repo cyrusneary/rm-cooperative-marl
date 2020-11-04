@@ -58,10 +58,25 @@ def run_qlearning_task(epsilon,
         for i in range(num_agents):
             # Perform a q-learning step.
             if not(agent_list[i].is_task_complete):
+                current_u = agent_list[i].u
                 s, a = agent_list[i].get_next_action(epsilon, learning_params)
                 r, l, s_new = training_environments[i].environment_step(s,a)
-                a = training_environments[i].get_last_action() # due to MDP slip
+                # a = training_environments[i].get_last_action() # due to MDP slip
                 agent_list[i].update_agent(s_new, a, r, l, learning_params)
+
+                for u in agent_list[i].rm.U:
+                    if not (u == current_u) and not (u in agent_list[i].rm.T):
+                        l = training_environments[i].get_mdp_label(s, s_new, u)
+                        r = 0
+                        u_temp = u
+                        u2 = u
+                        for e in l:
+                            # Get the new reward machine state and the reward of this step
+                            u2 = agent_list[i].rm.get_next_state(u_temp, e)
+                            r = r + agent_list[i].rm.get_reward(u_temp, u2)
+                            # Update the reward machine state
+                            u_temp = u2
+                        agent_list[i].update_q_function(s, s_new, u, u2, a, r, learning_params)
 
         # If enough steps have elapsed, test and save the performance of the agents.
         if testing_params.test and tester.get_current_step() % testing_params.test_freq == 0:
@@ -217,8 +232,8 @@ def run_multi_agent_qlearning_test(agent_list,
                             projected_l_dict[i] = []
 
             # update the agent's internal representation
-            a = testing_env.get_last_action(i)
-            agent_list[i].update_agent(s_team_next[i], a, r, projected_l_dict[i], learning_params, update_q_function=False)
+            # a = testing_env.get_last_action(i)
+            agent_list[i].update_agent(s_team_next[i], a_team[i], r, projected_l_dict[i], learning_params, update_q_function=False)
 
         if all(agent.is_task_complete for agent in agent_list):
             break
@@ -284,7 +299,7 @@ def run_multi_agent_experiment(tester,
         while not tester.stop_learning():
             num_episodes += 1
 
-            epsilon = epsilon*0.99
+            # epsilon = epsilon*0.99
 
             run_qlearning_task(epsilon,
                                 tester,
