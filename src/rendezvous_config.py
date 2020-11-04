@@ -41,7 +41,7 @@ def rendezvous_config(num_times, num_agents):
     learning_params.enter_loop = 10
 
     tester = Tester(learning_params, testing_params)
-    tester.total_steps = 200 * step_unit # 700000
+    tester.total_steps = 100 * step_unit
     tester.min_steps = 1
 
     tester.rm_test_file = joint_rm_file
