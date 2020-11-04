@@ -1,6 +1,7 @@
 # DQPRM
 
-This project studies reward machines for multi-agent q-learning of temporally extended cooperative tasks.
+This project (Reward Machines for Cooperative Multi-Agent Reinforcement Learning: https://arxiv.org/abs/2007.01962) studies reward machines for 
+multi-agent q-learning of temporally extended cooperative tasks.
 
 ## Installation instructions
 
