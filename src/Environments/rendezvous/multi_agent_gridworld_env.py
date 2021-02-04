@@ -369,6 +369,27 @@ class MultiAgentGridWorldEnv:
 
         return options_list
 
+    def get_avail_options(self, agent_id):
+        """
+        Given the current metastate, get the available options. Some options are unavailable if 
+        they are not possible to complete at the current stage of the task. In such circumstances
+        we don't want the agents to update the corresponding option q-functions.
+        """
+        avail_options = self.get_options_list(agent_id)
+
+        return avail_options
+
+    def get_avail_meta_action_indeces(self, agent_id):
+        """
+        Get a list of the indeces corresponding to the currently available meta-action/option
+        """
+        avail_options = self.get_avail_options(agent_id)
+        all_options_list = self.get_options_list(agent_id)
+        avail_meta_action_indeces = []
+        for option in avail_options:
+            avail_meta_action_indeces.append(all_options_list.index(option))
+        return avail_meta_action_indeces
+
     def get_completed_options(self, s):
         """
         Get a list of strings corresponding to options that are deemed complete in the team state described by s.

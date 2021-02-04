@@ -63,7 +63,7 @@ class IhrlAgent:
         self.current_option = ''
         self.option_complete = False
 
-    def get_next_meta_action(self, meta_state, epsilon, learning_params):
+    def get_next_meta_action(self, meta_state, avail_meta_action_indeces, epsilon, learning_params):
         """
         Return the next meta-action selected by the agent.
 
@@ -75,7 +75,8 @@ class IhrlAgent:
         T = learning_params.T
 
         if random.random() < epsilon:
-            g = random.choice(self.meta_actions)
+            # g = random.choice(self.meta_actions)
+            g = random.choice(avail_meta_action_indeces)
             g_selected = g
         else:
             pr_sum = np.sum(np.exp(self.meta_q[meta_state, :] * T))
@@ -93,10 +94,14 @@ class IhrlAgent:
             for i in range(len(self.meta_actions)):
                 pr_select[i+1] = pr_select[i] + pr[i]
 
-            randn = random.random()
-            for g in self.meta_actions:
-                if randn >= pr_select[g] and randn <= pr_select[g+1]:
-                    g_selected = g
+            while True:
+                randn = random.random()
+                for g in self.meta_actions:
+                    if randn >= pr_select[g] and randn <= pr_select[g+1]:
+                        g_selected = g
+                        break
+                # Only choose allowable meta-actions
+                if g_selected in avail_meta_action_indeces:
                     break
 
         return g_selected
@@ -141,7 +146,7 @@ class IhrlAgent:
 
         return a_selected
 
-    def update_agent(self, s_new, a, reward, completed_options, learning_params, update_q_function=True):
+    def update_agent(self, s_new, avail_options, a, reward, completed_options, learning_params, update_q_function=True):
         """
         Update the agent's state, q-function, and reward machine after 
         interacting with the environment.
@@ -164,12 +169,13 @@ class IhrlAgent:
         
         if update_q_function == True:
             for option in self.options_list:
-                if option in completed_options:
-                    reward = 1.0
-                    self.update_q_function(self.s, s_new, a, option, reward, learning_params)
-                else:
-                    reward = 0.0
-                    self.update_q_function(self.s, s_new, a, option, reward, learning_params)
+                if option in avail_options:
+                    if option in completed_options:
+                        reward = 1.0
+                        self.update_q_function(self.s, s_new, a, option, reward, learning_params)
+                    else:
+                        reward = 0.0
+                        self.update_q_function(self.s, s_new, a, option, reward, learning_params)
 
         # Moving to the next state
         self.s = s_new

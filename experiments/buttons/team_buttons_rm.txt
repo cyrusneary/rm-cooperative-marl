@@ -1,24 +1,14 @@
 0 # initial state 
 (0, 1, 'by', 0) # Yellow button is pressed
-(0, 6, 'a1r', 0) # Agent 1 touches red
-(0, 6, 'a2y', 0) # Agent 2 touches yellow
-(0, 6, 'a3g', 0) # Agent 3 touches green
 (1, 2, 'bg', 0) # Green button is pressed
-(1, 6, 'a1r', 0) # Agent 1 touches red
-(1, 6, 'a3g', 0) # Agent 3 touches green
 (2, 3, 'a2br', 0) # Agent 2 on red button
 (2, 4, 'a3br', 0) # Agent 3 on red button
-(2, 6, 'a1r', 0) # Agent 1 on red
 (3, 5, 'a3br', 0) # Agent 3 on red button
 (3, 2, 'a2lr', 0) # Agent 2 left red button
-(3, 6, 'a1r', 0) # Agent 1 on red
 (4, 5, 'a2br', 0) # Agent 2 on red button
 (4, 2, 'a3lr', 0) # Agent 3 left red button
-(4, 6, 'a1r', 0) # Agent 1 on red
 (5, 3, 'a3lr', 0) # Agent 3 left red button
 (5, 4, 'a2lr', 0) # Agent 2 left red button
-(5, 6, 'a1r', 0) # Agent 1 on red
-(5, 7, 'br', 0) # Red button has been pressed
-(7, 8, 'g', 1) # Agent 1 reaches goal destination
-(6, 6, 'True', 0) # 6 is a terminating state 
-(8, 8, 'True', 0) # 8 is a terminating state
+(5, 6, 'br', 0) # Red button has been pressed
+(6, 7, 'g', 1) # Agent 1 reaches goal destination
+(7, 7, 'True', 0) # 8 is a terminating state

@@ -1,9 +1,7 @@
 0 # initial state 
 (0, 1, 'by', 0) # Yellow button is pressed
-(0, 5, 'a2y', 0) # Agent 2 touches yellow
 (1, 2, 'bg', 0) # Green button is pressed
 (2, 3, 'a2br', 0) # Agent 2 moves onto red button
 (3, 2, 'a2lr', 0) # Agent 2 leaves red button prematurely
 (3, 4, 'br', 1) # Red button is successfully activated
 (4, 4, 'True', 0) # State 4 is an absorbing state
-(5, 5, 'True', 0) # State 5 is an absorbing state

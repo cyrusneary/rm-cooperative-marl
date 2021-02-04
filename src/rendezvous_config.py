@@ -34,14 +34,14 @@ def rendezvous_config(num_times, num_agents):
     learning_params.gamma = 0.9
     learning_params.alpha = 0.8
     learning_params.T = 50
-    learning_params.initial_epsilon = 0.0
+    learning_params.initial_epsilon = 0.0 # Set epsilon to zero to turn off epsilon-greedy exploration (only using boltzmann)
     learning_params.tabular_case = True
     learning_params.max_timesteps_per_task = step_unit
     learning_params.relearn_period = 30
     learning_params.enter_loop = 10
 
     tester = Tester(learning_params, testing_params)
-    tester.total_steps = 100 * step_unit
+    tester.total_steps = 150 * step_unit
     tester.min_steps = 1
 
     tester.rm_test_file = joint_rm_file

@@ -5,9 +5,9 @@ import os
 
 if __name__ == "__main__":
 
-    num_times = 1 # Number of separate trials to run the algorithm for
+    num_times = 10 # Number of separate trials to run the algorithm for
 
-    num_agents = 3 # This will be automatically set to 3 for buttons experiment
+    num_agents = 3 # This will be automatically set to 3 for buttons experiment (max 10)
 
     # experiment = 'rendezvous'
     # experiment = 'centralized_rendezvous'

@@ -129,27 +129,21 @@ class ButtonsEnv:
 
         l = []
 
-        thresh = 0.3
+        thresh = 0.3 #0.3
 
         if self.agent_id == 1:
             if u == 0:
-                if (row,col) in self.red_tiles:
-                    l.append('a1r')
-                elif (row, col) == self.env_settings['yellow_button']:
+                if (row, col) == self.env_settings['yellow_button']:
                     l.append('by')
             if u == 1:
-                if (row,col) in self.red_tiles:
-                    l.append('a1r')
-                elif np.random.random() <= thresh:
+                if np.random.random() <= thresh:
                     l.append('br')
             if u == 2:
                 if (row, col) == self.env_settings['goal_location']:
                     l.append('g')
         elif self.agent_id == 2:
             if u == 0:
-                if (row, col) in self.yellow_tiles:
-                    l.append('a2y')
-                elif np.random.random() <= thresh:
+                if np.random.random() <= thresh:
                     l.append('by')
             if u == 1 and (row,col) == self.env_settings['green_button']:
                 l.append('bg')
@@ -162,9 +156,7 @@ class ButtonsEnv:
                     l.append('br')
         elif self.agent_id == 3:
             if u == 0:
-                if (row, col) in self.green_tiles:
-                    l.append('a3g')
-                elif np.random.random() <= thresh:
+                if np.random.random() <= thresh:
                     l.append('bg')
             if u == 1 and (row,col) == self.env_settings['red_button']:
                 l.append('a3br')
@@ -240,6 +232,23 @@ class ButtonsEnv:
                 col += 1
 
         s_next = self.get_state_from_description(row, col)
+
+        # If the appropriate button hasn't yet been pressed, don't allow the agent into the colored region
+        if self.agent_id == 1:
+            if self.u == 0:
+                if (row, col) in self.red_tiles:
+                    s_next = s
+            if self.u == 1:
+                if (row, col) in self.red_tiles:
+                    s_next = s
+        if self.agent_id == 2:
+            if self.u == 0:
+                if (row, col) in self.yellow_tiles:
+                    s_next = s
+        if self.agent_id == 3:
+            if self.u == 0:
+                if (row, col) in self.green_tiles:
+                    s_next = s
 
         last_action = a_
         return s_next, last_action
@@ -339,7 +348,7 @@ class ButtonsEnv:
         print(display)
 
 def play():
-    agent_id = 3
+    agent_id = 2
     base_file_dir = os.path.abspath(os.path.join(os.getcwd(), '../../..'))
     rm_string = os.path.join(base_file_dir, 'experiments', 'buttons', 'buttons_rm_agent_{}.txt'.format(agent_id))
     
@@ -368,6 +377,8 @@ def play():
 
     s = game.get_initial_state()
 
+    failed_task_flag = False
+
     while True:
         # Showing game
         game.show(s)
@@ -378,13 +389,14 @@ def play():
         print()
         # Executing action
         if a in str_to_action:
-            r, l, s = game.environment_step(s, str_to_action[a])
+            r, l, s, failed_task_flag = game.environment_step(s, str_to_action[a])
         
             print("---------------------")
             print("Next States: ", s)
             print("Label: ", l)
             print("Reward: ", r)
             print("RM state: ", game.u)
+            print("failed task: ", failed_task_flag)
             print("---------------------")
 
             if game.reward_machine.is_terminal_state(game.u): # Game Over

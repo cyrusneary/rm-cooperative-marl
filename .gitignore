@@ -58,4 +58,4 @@ Thumbs.db
 __pycache__
 .vscode/
 jupyter notebooks/
-AAMAS_data/
+data/

@@ -60,7 +60,8 @@ def run_ihrl_training(epsilon,
         for i in range(num_agents):
             if t == 0:
                 current_meta_state = training_env.get_meta_state(i)
-                meta_action = agent_list[i].get_next_meta_action(current_meta_state, epsilon, learning_params)
+                avail_meta_action_indeces = training_env.get_avail_meta_action_indeces(i)
+                meta_action = agent_list[i].get_next_meta_action(current_meta_state, avail_meta_action_indeces, epsilon, learning_params)
                 agent_list[i].current_option = agent_list[i].options_list[meta_action]
                 agent_list[i].option_start_state = training_env.get_meta_state(i)
                 agent_list[i].option_complete = False
@@ -73,7 +74,8 @@ def run_ihrl_training(epsilon,
                 agent_list[i].update_meta_q_function(option_start_state, current_meta_state, meta_action, mc_rewards[i], learning_params)
 
                 # choose the next meta action
-                meta_action = agent_list[i].get_next_meta_action(current_meta_state, epsilon, learning_params)
+                avail_meta_action_indeces = training_env.get_avail_meta_action_indeces(i)
+                meta_action = agent_list[i].get_next_meta_action(current_meta_state, avail_meta_action_indeces, epsilon, learning_params)
                 agent_list[i].current_option = agent_list[i].options_list[meta_action]
                 agent_list[i].option_start_state = current_meta_state
                 agent_list[i].option_complete = False
@@ -94,7 +96,8 @@ def run_ihrl_training(epsilon,
 
         for i in range(num_agents):
             # a = training_env.get_last_action(i)
-            agent_list[i].update_agent(s_team_next[i], a_team[i], r, completed_options, learning_params, update_q_function=True)
+            avail_options = training_env.get_avail_options(i)
+            agent_list[i].update_agent(s_team_next[i], avail_options, a_team[i], r, completed_options, learning_params, update_q_function=True)
             if agent_list[i].current_option in completed_options:
                 agent_list[i].option_complete = True
 
@@ -244,7 +247,8 @@ def run_ihrl_test(agent_list,
         for i in range(num_agents):
             if t == 0:
                 current_meta_state = testing_env.get_meta_state(i)
-                meta_action = agent_list[i].get_next_meta_action(current_meta_state, -1, learning_params)
+                avail_meta_action_indeces = testing_env.get_avail_meta_action_indeces(i)
+                meta_action = agent_list[i].get_next_meta_action(current_meta_state, avail_meta_action_indeces, -1, learning_params)
                 agent_list[i].current_option = agent_list[i].options_list[meta_action]
                 agent_list[i].option_start_state = testing_env.get_meta_state(i)
                 agent_list[i].option_complete = False
@@ -252,7 +256,8 @@ def run_ihrl_test(agent_list,
             if agent_list[i].option_complete:
                 # choose the next meta action
                 current_meta_state = testing_env.get_meta_state(i)
-                meta_action = agent_list[i].get_next_meta_action(current_meta_state, -1, learning_params)
+                avail_meta_action_indeces = testing_env.get_avail_meta_action_indeces(i)
+                meta_action = agent_list[i].get_next_meta_action(current_meta_state, avail_meta_action_indeces, -1, learning_params)
                 agent_list[i].current_option = agent_list[i].options_list[meta_action]
                 agent_list[i].option_start_state = current_meta_state
                 agent_list[i].option_complete = False
@@ -278,7 +283,8 @@ def run_ihrl_test(agent_list,
 
         for i in range(num_agents):
             # a = testing_env.get_last_action(i)
-            agent_list[i].update_agent(s_team_next[i], a_team[i], r, completed_options, learning_params, update_q_function=False)
+            avail_options = testing_env.get_avail_options(i)
+            agent_list[i].update_agent(s_team_next[i], avail_options, a_team[i], r, completed_options, learning_params, update_q_function=False)
             if agent_list[i].current_option in completed_options:
                 agent_list[i].option_complete = True
 

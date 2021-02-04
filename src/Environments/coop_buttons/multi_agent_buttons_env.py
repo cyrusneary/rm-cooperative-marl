@@ -129,7 +129,7 @@ class MultiAgentButtonsEnv:
         agent3 = 2
 
         for i in range(self.num_agents):
-            s_next[i], last_action = self.get_next_state(s[i], a[i])
+            s_next[i], last_action = self.get_next_state(s[i], a[i], i)
             self.last_action[i] = last_action
 
         (row1, col1) = self.get_state_description(s_next[agent1])
@@ -156,17 +156,9 @@ class MultiAgentButtonsEnv:
             # Update the reward machine state
             self.u = u2
 
-        # if (not self.u == 6): # u = 6 corresponds to the "failed task" state 
-        #     if self.u >= 1:
-        #         self.yellow_button_pushed = True
-        #     if self.u >= 2:
-        #         self.green_button_pushed = True
-        #     if self.u >= 7:
-        #         self.red_button_pushed = True
-
         return r, l, s_next
 
-    def get_next_state(self, s, a):
+    def get_next_state(self, s, a, agent_id):
         """
         Get the next state in the environment given action a is taken from state s.
         Update the last action that was truly taken due to MDP slip.
@@ -231,6 +223,20 @@ class MultiAgentButtonsEnv:
                 col += 1
 
         s_next = self.get_state_from_description(row, col)
+
+        # If the appropriate button hasn't yet been pressed, don't allow the agent into the colored region
+        if agent_id == 0:
+            if (self.u == 0) or (self.u == 1) or (self.u == 2) or (self.u == 3) or (self.u == 4) or (self.u == 5):
+                if (row, col) in self.red_tiles:
+                    s_next = s
+        if agent_id == 1:
+            if (self.u == 0):
+                if (row, col) in self.yellow_tiles:
+                    s_next = s
+        if agent_id == 2:
+            if (self.u == 0) or (self.u == 1):
+                if (row, col) in self.green_tiles:
+                    s_next = s
 
         last_action = a_
         return s_next, last_action
@@ -361,17 +367,6 @@ class MultiAgentButtonsEnv:
         row2, col2 = self.get_state_description(s_next[agent2])
         row3, col3 = self.get_state_description(s_next[agent3])
 
-        # check if agents are on dangerous tiles
-        if u == 0:
-            if (row2, col2) in self.yellow_tiles:
-                l.append('a2y')
-        if u == 0 or u == 1:
-            if (row3, col3) in self.green_tiles:
-                l.append('a3g')
-        if u == 0 or u == 1 or u == 2 or u == 3 or u == 4 or u == 5:
-            if (row1, col1) in self.red_tiles:
-                l.append('a1r')
-
         if u == 0:
         # Now check if agents are on buttons
             if not ((row2, col2) in self.yellow_tiles) and (row1,col1) == self.env_settings['yellow_button']:
@@ -401,7 +396,7 @@ class MultiAgentButtonsEnv:
                 l.append('a2lr')
             if not ((row3, col3) == self.env_settings['red_button']):
                 l.append('a3lr')
-        if u == 7:
+        if u == 6:
             # Check if agent 1 has reached the goal
             if (row1, col1) == self.env_settings['goal_location']:
                 l.append('g')
@@ -445,6 +440,47 @@ class MultiAgentButtonsEnv:
             options_list.append('a3br')
 
         return options_list
+
+    def get_avail_options(self, agent_id):
+        """
+        Given the current metastate, get the available options. Some options are unavailable if 
+        they are not possible to complete at the current stage of the task. In such circumstances
+        we don't want the agents to update the corresponding option q-functions.
+        """
+        agent1 = 0
+        agent2 = 1
+        agent3 = 2
+
+        avail_options = []
+
+        if agent_id == agent1:
+            avail_options.append('w1')
+            avail_options.append('by')
+            if self.red_button_pushed:
+                avail_options.append('g')
+        if agent_id == agent2:
+            avail_options.append('w2')
+            if self.yellow_button_pushed:
+                avail_options.append('bg')
+                avail_options.append('a2br')
+
+        if agent_id == agent3:
+            avail_options.append('w3')
+            if self.green_button_pushed:
+                avail_options.append('a3br')
+
+        return avail_options
+
+    def get_avail_meta_action_indeces(self, agent_id):
+        """
+        Get a list of the indeces corresponding to the currently available meta-action/option
+        """
+        avail_options = self.get_avail_options(agent_id)
+        all_options_list = self.get_options_list(agent_id)
+        avail_meta_action_indeces = []
+        for option in avail_options:
+            avail_meta_action_indeces.append(all_options_list.index(option))
+        return avail_meta_action_indeces
 
     def get_completed_options(self, s):
         """
@@ -567,7 +603,7 @@ class MultiAgentButtonsEnv:
 def play():
     n = 3 # num agents
     base_file_dir = os.path.abspath(os.path.join(os.getcwd(), '../../..'))
-    rm_string = os.path.join(base_file_dir, 'experiments', 'buttons', 'team_buttons_rm.txt')
+    rm_string = os.path.join(base_file_dir, 'experiments', 'buttonsCopy', 'team_buttons_rm.txt')
     
     # Set the environment settings for the experiment
     env_settings = dict()
@@ -585,7 +621,7 @@ def play():
     env_settings['green_tiles'] = [(2,8), (2,9), (3,8), (3,9)]
     env_settings['red_tiles'] = [(8,5), (8,6), (8,7), (8,8), (9,5), (9,6), (9,7), (9,8)]
 
-    env_settings['p'] = 0.99
+    env_settings['p'] = 1.0
     
     game = MultiAgentButtonsEnv(rm_string, n, env_settings)
 
