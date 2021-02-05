@@ -43,6 +43,9 @@ class MultiAgentGridWorldEnv:
         self.last_action = np.full(self.num_agents, -1, dtype=int) #Initialize last action with garbage values
 
         self.rendezvous_complete = False
+        self.reached_goal_flag = []
+        for i in range(num_agents):
+            self.reached_goal_flag.append(False)
 
     def _load_map(self):
         """
@@ -131,6 +134,13 @@ class MultiAgentGridWorldEnv:
             r = r + self.reward_machine.get_reward(self.u, u2)
             # Update the reward machine state
             self.u = u2
+
+        # If the rendezvous is complete, the agents can start reaching their goals 
+        # (The reached_goal_flag list is used to update the meta-state)
+        if self.rendezvous_complete:
+            for i in range(self.num_agents):
+                if 'g{}'.format(i+1) in l:
+                    self.reached_goal_flag[i] = True
 
         return r, l, s_next
 
@@ -421,7 +431,8 @@ class MultiAgentGridWorldEnv:
         """
         Return the number of meta states for the agent specified by agent_id.
         """
-        return int(2)
+        return int(3)
+        # return len(self.reward_machine.U)
 
     def get_meta_state(self, agent_id):
         """
@@ -439,10 +450,16 @@ class MultiAgentGridWorldEnv:
         meta_state : int
             Index of the meta-state.
         """
-        if self.rendezvous_complete:
-            return 1
-        else:
+        if not (self.rendezvous_complete):
             return 0
+        elif self.rendezvous_complete and not(self.reached_goal_flag[agent_id]):
+            return 1
+        elif self.rendezvous_complete and self.reached_goal_flag[agent_id]:
+            return 2
+
+        # Suprisingly, directly using the states of the reward machine as the meta states 
+        # did not work well.
+        # return self.u
 
     ######################### TROUBLESHOOTING METHODS ################################
 
