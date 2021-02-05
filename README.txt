@@ -26,5 +26,4 @@ To run the example, run src>>python run.py
 
 ## Acknowledgments
 
-Several files in our implementation adapt code originally included in https://bitbucket.org/RToroIcarte/qrm. We thank the authors of this work, who study
-the use of reward machines for q-learning in the single-agent setting.
+Several files in our implementation adapt code originally included in https://bitbucket.org/RToroIcarte/qrm. We thank the authors of this work, who study the use of reward machines for q-learning in the single-agent setting.
