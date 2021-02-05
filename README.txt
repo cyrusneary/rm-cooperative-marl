@@ -1,4 +1,4 @@
-# DQPRM
+# DQPRM - Decentralized Q-Learning with Projected Reward Machines
 
 This project (Reward Machines for Cooperative Multi-Agent Reinforcement Learning: https://arxiv.org/abs/2007.01962) studies reward machines for multi-agent q-learning of temporally extended cooperative tasks.
 
