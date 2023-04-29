@@ -11,11 +11,17 @@ DQPRM requires Python 3.6 with libraries numpy and matplotlib.
 To configure the example to run, open run.py and set:
 
 experiment = 'rendezvous' - DQPRM rendezvous experiment
+
 experiment = 'centralized_rendezvous' - CQRM rendezvous experiment
+
 experiment = 'ihrl_rendezvous' - I-hL rendezvous experiment
+
 experiment = 'iql_rendezvous' - IQL rendezvous experiment
+
 experiment = 'buttons' - DQPRM buttons experiment
+
 experiment = 'ihrl_buttons' - I-hL buttons experiment
+
 experiment = 'iql_buttons' - IQL buttons experiment
 
 If running one of the rendezvous experiments, set num_agents to a number in [2,10] to control the number of agents involved in the experiment.
